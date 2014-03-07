@@ -3,22 +3,29 @@ body {
   margin: 0; 
   height: 100%; 
   width: 100%;
+  background: #bbb;
 }
 
 #map { 
   position: absolute;
   height: 100%;
-  width: 100%;
+  width: 80%;
+  float: left;
 }
 
 #countries {
-  position: relative;
-  top: 9px;
-  float: right;
-  right: 10px;
-  z-index: 7;
+  margin-top: 15px;
+  text-align: center;
+  height: 60px;
+  border-bottom: 1px solid #aaa;
 }
 
 .select2-container {
-  width: 300px;
+  width: 90%;
+}
+
+#sidebar {
+  width: 20%;
+  margin-top: 20px;
+  float: right;
 }
