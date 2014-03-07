@@ -10,6 +10,7 @@ var mapquest = L.tileLayer.grayscale(mapquestUrl, {maxZoom: 18, attribution: map
 mapquest.addTo(map);
 
 function init () {
+  $("#select").select2();
   map.setView(india, 5);
 }
 

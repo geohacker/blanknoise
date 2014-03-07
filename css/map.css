@@ -9,4 +9,16 @@ body {
   position: absolute;
   height: 100%;
   width: 100%;
-} 
+}
+
+#countries {
+  position: relative;
+  top: 9px;
+  float: right;
+  right: 10px;
+  z-index: 7;
+}
+
+.select2-container {
+  width: 300px;
+}
