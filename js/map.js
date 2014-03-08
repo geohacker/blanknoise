@@ -6,33 +6,52 @@ subDomains = ['otile1','otile2','otile3','otile4'],
 mapquestAttrib = "MapQuest and OpenStreetMap"
 
 var mapquest = L.tileLayer.grayscale(mapquestUrl, {maxZoom: 18, attribution: mapquestAttrib, subdomains: subDomains});
-
 // mapquest.addTo(map);
 
-// Circle icon
-// var cityIcon = ;
+$("#select").select2();
+$("#select").on("change", countryChanged);
+
+function countryChanged (selection) {
+  country = selection.val;
+  // TODO: Fetch country location and set the map view.
+  // Send ajax request and get GeoJSON
+  getData(country);
+}
 
 function init () {
-  $("#select").select2();
-  $("#select").on("change", countryChanged);
 
-  function countryChanged (selection) {
-    country = selection.val;
-    // Send ajax and get GeoJSON
-
-      }
   map.setView(india, 5);
+  getData('india');
+}
 
-  // m = L.marker(india, 
-  //   {icon: L.divIcon({className: 'icon', html: 10, iconSize: [40, 40]})}
-  //   ).addTo(map);
-  // m.on({
-  //   click: function (e) {
-  //     console.log(e);
-  //   }
-  // });
+function getData (country) {
+  $.ajax({
+    url: "http://www.ineveraskforit.org/testimonial-api/json",
+    data: {country:country},
+    success: function (data) {
+      data.forEach(addToMap);
+    }
+  });
+}
 
+function addToMap (element, index, array) {
+  // Create a marker.
+  // Add it to the map.
+  cityMarker = L.marker([element.lat, element.lon],
+    {icon: L.divIcon({className: 'icon', html: element.count, iconSize: [40,40]})}
+    ).addTo(map);
 
+  // Bind click event.
+  cityMarker.on({
+    click: function (e) {
+      element.incidents.forEach(fillInfoBox);
+    }
+  })
+
+}
+
+function fillInfoBox (element, index, array) {
+  // Use element to fill the sidebar entries.
 }
 
 init();
