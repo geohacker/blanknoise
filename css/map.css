@@ -3,8 +3,6 @@ body {
   margin: 0; 
   height: 100%; 
   width: 100%;
-  /*background: #bbb;*/
-  background: black;
 }
 
 #map { 
@@ -12,27 +10,32 @@ body {
   height: 100%;
   width: 80%;
   float: left;
+  border-right: 1px dotted black;
 }
 
 #countries {
-  margin-top: 15px;
   text-align: center;
-  height: 60px;
-  border-bottom: 1px solid #aaa;
+  background: grey;
+  width: 80%;
+  margin-left: 10%;
+  border-radius: 4px;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 
 .select2-container {
-  width: 90%;
+  width: 80%;
 }
 
 #sidebar {
+  height: 100%;
   width: 20%;
-  margin-top: 20px;
   float: right;
+  margin-top: 13px;
 }
 
 .icon {
-  background:#ded8cb;
+  background:#ff9d8b;
   text-align:center;
   vertical-align:middle;
   border:1px solid #ff3814;
@@ -44,3 +47,25 @@ body {
 .leaflet-container .leaflet-control-attribution {
   background: none;
 }
+
+.links div {
+  text-align: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  width: 80%;
+  background: grey;
+  margin-bottom: 10px;
+  margin-left: 10%;
+  border-radius: 4px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+a.links {
+  text-decoration: none;
+  color: black;
+}
+
+.infobox {
+}
+

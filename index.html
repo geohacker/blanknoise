@@ -4,10 +4,10 @@
 <head>
   <link rel="stylesheet" type="text/css" href="libs/select2/select2.css">
   <link rel="stylesheet" href="libs/leaflet-0.7.2/leaflet.css" />
-  <link rel="stylesheet" type="text/css" href="css/map.css">
   <script src="libs/jquery-1.11.0/jquery.min.js"></script>
   <script src="libs/select2/select2.min.js"></script>
   <script src="libs/leaflet-0.7.2/leaflet.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/map.css">
 </head>
 
 <title> I Never Asked For It — Map</title>
@@ -15,7 +15,14 @@
 <body>
   <div id="map"></div>
   <div id="sidebar">
+    <a class="links" id="#about" href="#">
+        <div>About</div>
+    </a>    
+    <a class="links" id="#contribute" href="#">
+        <div>Contribute</div>
+    </a>    
     <div id="countries">
+      <!-- <p class="info"> Select a Location </p> -->
       <select id="select" name="country" id="country">
         <option value="Afganistan">Afghanistan</option>
         <option value="Albania">Albania</option>
@@ -266,6 +273,9 @@
         <option value="Zimbabwe">Zimbabwe</option>
       </select>
     </div>
+    <div class="infobox">
+    </div>
+
   </div>
   <script src="js/map.js"></script>
 </body>
