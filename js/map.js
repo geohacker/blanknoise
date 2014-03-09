@@ -1,19 +1,18 @@
-var map = L.map('map');
+var map = L.map('map', {'maxZoom': 7});
 var india = L.latLng([21.882, 82.749]);
 
-var mapquestUrl = 'http://{s}.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.png',
-subDomains = ['otile1','otile2','otile3','otile4'],
-mapquestAttrib = "MapQuest and OpenStreetMap"
+var tonerUrl = 'http://tile.stamen.com/toner/{z}/{x}/{y}.png',
+stamenSubDomains = ['a', 'b', 'c', 'd'],
+stamenAttrib = "<a href='http://maps.stamen.com'>Stamen</a> and <a href='http://openstreetmap.org'>OpenStreetMap</a>"
 
-var mapquest = L.tileLayer.grayscale(mapquestUrl, {maxZoom: 18, attribution: mapquestAttrib, subdomains: subDomains});
-mapquest.addTo(map);
+var toner = L.tileLayer(tonerUrl, {maxZoom: 18, attribution: stamenAttrib, subdomains: stamenSubDomains});
+toner.addTo(map);
 
 $("#select").select2();
 $("#select").on("change", countryChanged);
 
 function countryChanged (selection) {
   country = selection.val;
-  // TODO: Fetch country location and set the map view.
   // Send ajax request and get GeoJSON
   getData(country);
 }
