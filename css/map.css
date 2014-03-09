@@ -3,7 +3,8 @@ body {
   margin: 0; 
   height: 100%; 
   width: 100%;
-  background: #bbb;
+  /*background: #bbb;*/
+  background: black;
 }
 
 #map { 
@@ -31,10 +32,15 @@ body {
 }
 
 .icon {
-    background:#fee;
-    text-align:center;
-    vertical-align:middle;
-    border:1px solid #000;
-    border-radius:50px;
-    line-height:40px;
+  background:#ded8cb;
+  text-align:center;
+  vertical-align:middle;
+  border:1px solid #ff3814;
+  border-radius:50px;
+  line-height:40px;
+  opacity: 0.8;
+}
+
+.leaflet-container .leaflet-control-attribution {
+  background: none;
 }
