@@ -21,6 +21,8 @@ body {
   border-radius: 4px;
   padding-top: 15px;
   padding-bottom: 15px;
+  clear: both;
+  margin-top: 65px;
 }
 
 .select2-container {
@@ -49,16 +51,17 @@ body {
 }
 
 .links div {
+  float: left;
   text-align: center;
   padding-top: 15px;
   padding-bottom: 15px;
-  width: 80%;
+  width: 38%;
   background: grey;
   margin-bottom: 10px;
-  margin-left: 10%;
   border-radius: 4px;
   text-align: center;
   vertical-align: middle;
+  display: inline-block;
 }
 
 a.links {
@@ -69,3 +72,9 @@ a.links {
 .infobox {
 }
 
+.left {
+  margin-left: 10%;
+}
+.right {
+  margin-left: 4%;
+}
