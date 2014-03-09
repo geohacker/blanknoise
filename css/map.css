@@ -15,7 +15,7 @@ body {
 
 #countries {
   text-align: center;
-  background: grey;
+  background: black;
   width: 80%;
   margin-left: 10%;
   border-radius: 4px;
@@ -37,12 +37,12 @@ body {
 }
 
 .icon {
-  background:#ff9d8b;
-  text-align:center;
-  vertical-align:middle;
-  border:1px solid #ff3814;
-  border-radius:50px;
-  line-height:40px;
+  background: #ff9d8b;
+  text-align: center;
+  vertical-align: middle;
+  border: 1px solid #ff3814;
+  border-radius: 50px;
+  line-height: 40px;
   opacity: 0.8;
 }
 
@@ -56,17 +56,23 @@ body {
   padding-top: 15px;
   padding-bottom: 15px;
   width: 38%;
-  background: grey;
+  background: black;
   margin-bottom: 10px;
   border-radius: 4px;
   text-align: center;
   vertical-align: middle;
   display: inline-block;
+  color: white;
 }
 
 a.links {
   text-decoration: none;
   color: black;
+}
+
+a.links :hover {
+  background: red;
+  opacity: 0.7;
 }
 
 .infobox {
@@ -77,4 +83,16 @@ a.links {
 }
 .right {
   margin-left: 4%;
+}
+
+.title {
+  /*background: black;*/
+  border-bottom: 1px dotted black;
+  /*padding-top: 15px;*/
+  padding-bottom: 15px;
+  /*width: 80%;*/
+  text-align: center;
+  /*margin-left: 10%;*/
+  margin-bottom: 20px;
+  /*border-radius: 4px;*/
 }
