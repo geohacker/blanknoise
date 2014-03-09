@@ -6,7 +6,7 @@ subDomains = ['otile1','otile2','otile3','otile4'],
 mapquestAttrib = "MapQuest and OpenStreetMap"
 
 var mapquest = L.tileLayer.grayscale(mapquestUrl, {maxZoom: 18, attribution: mapquestAttrib, subdomains: subDomains});
-// mapquest.addTo(map);
+mapquest.addTo(map);
 
 $("#select").select2();
 $("#select").on("change", countryChanged);
@@ -21,7 +21,7 @@ function countryChanged (selection) {
 function init () {
 
   map.setView(india, 5);
-  getData('india');
+  getData('India');
 }
 
 function getData (country) {
@@ -29,7 +29,10 @@ function getData (country) {
     url: "http://www.ineveraskforit.org/testimonial-api/json",
     data: {country:country},
     success: function (data) {
-      data.forEach(addToMap);
+      currentCountry = L.latLng([data[0].lat, data[0].lon]);
+      map.setView(currentCountry, 5);
+      points = data.slice(1);
+      points.forEach(addToMap);
     }
   });
 }
